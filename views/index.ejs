@@ -1,0 +1,24 @@
+<html>
+
+<body>
+    <main>
+        <div class="ui segment">
+            <h1>Universities of Morocco</h1>
+
+            <ul>
+                <% universities.forEach(function(university) { %>
+                    <li class="ui segment">
+                        <%= university.name %> : <br></t>
+                            </t>
+                            </t>
+                            </t> Country : <%= university.country %> Domain : <%= university.domains %> , Web pages :
+                                    <%= university.web_pages %>
+                    </li>
+                    <% }); %>
+            </ul>
+
+        </div>
+    </main>
+</body>
+
+</html>

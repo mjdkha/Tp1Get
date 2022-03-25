@@ -1,0 +1,23 @@
+var express = require("express");
+const axios = require("axios");
+const { serviceUniversities } = require("../services/universitiesService")
+const app = express();
+app.set("view engine", "ejs");
+
+
+
+function getUniversities(req, res) {
+    try {
+        const { data } = await serviceUniversities.get(req.params.pays);
+        res.render("index", {
+            universities: data,
+        });
+    } catch (error) {
+        error.msg = "failed to retrieve universities data";
+        next(error);
+    }
+}
+
+module.exports = {
+    getUniversities
+}
